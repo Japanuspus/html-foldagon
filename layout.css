@@ -1,0 +1,33 @@
+@import 'reset.css';
+
+/* 
+    Attach markers in front of li.
+    Since there is no parent selector in css, we need to use 
+    ::before on a child in the foldable case.
+    We could require a child for the non-foldable case, but 
+    the following should work, attaching the 
+    display:inline-block makes sizing work.
+*/
+
+li {
+    padding-left: 1rem;
+}
+
+li.foldable>span::before,
+li::before {
+    display: inline-block;
+    width: 1em;
+}
+
+li.foldable::before {
+    content: '';
+    width: 0;
+}
+
+li.foldable>span::before {
+    content: '\25B7';
+}
+
+li::before {
+    content: '-';
+}

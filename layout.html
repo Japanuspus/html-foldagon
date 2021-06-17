@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <title>Layout</title>
+    <link href="layout.css" rel="stylesheet">
+</head>
+
+<!-- 
+    The input-id/label-for identifier is the price we pay to avoid js.
+    Alternative html would be input inside label, but that doesn't allow a css
+    selector on the inner ul.
+-->
+
+<body>
+    <h1>layout games</h1>
+    <ul>
+        <li class="foldable"><span></span>Item 1
+            <ul>
+                <li>Item 1.1</li>
+                <li>Item 1.1</li>
+                <li>Item 1.1</li>
+            </ul>
+        </li>
+        <li>Item 2
+            <ul>
+                <li>Item 2.1
+                    <ul>
+                        <li>Item 2.1.1</li>
+                        <li>Item 2.1.2</li>
+                        <li>Item 2.1.3</li>
+                    </ul>
+                </li>
+                <li>Item 2.2</li>
+            </ul>
+        </li>
+        <li>Item 3</li>
+    </ul>
+</body>
+
+</html>
