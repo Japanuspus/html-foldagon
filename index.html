@@ -9,32 +9,35 @@
     The input-id/label-for identifier is the price we pay to avoid js.
     Alternative html would be input inside label, but that doesn't allow a css
     selector on the inner ul.
+
+    note: There can be no spaces between <li .foldable> and <span>
 -->
 
 <body>
     <h1>Foldagon - foldable lists with css only</h1>
     <ul class="tree">
-        <li class="foldable">
-            <input type="checkbox" id="item1">
-            <label for="item1"></label>
-            <span>Title of item 1</span>
+        <li class="foldable"><input type="checkbox" id="item1"><label for="item1"></label><span>Title of item 1</span>
             <ul>
                 <li>1</li>
                 <li>2</li>
                 <li>3</li>
             </ul>
         </li>
-        <li class="foldable">
-            <input type="checkbox" id="item2">
-            <label for="item2"></label>
-            <span>Title of item 2</span>
+        <li class="foldable"><input type="checkbox" id="item2"><label for="item2"></label><span>Title of item 2</span>
             <ul>
                 <li>1</li>
                 <li>2</li>
                 <li>3</li>
             </ul>
         </li>
-        <li><span>An outer item</span></li>
+        <li><span>Title of a static tree</span>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </li>
+        <li><span>Title of an outer item</span></li>
         <li><span>An outer item</span></li>
     </ul>
 </body>

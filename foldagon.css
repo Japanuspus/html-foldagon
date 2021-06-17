@@ -1,42 +1,32 @@
 /* 
-Example html: 
-
-
+Example html::
     <ul class="tree">
-        <li class="foldable">
-            <input type="checkbox" id="item1">
-            <label for="item1"></label>
-            <span>Title of item 1</span>
+        <li class="foldable"><input type="checkbox" id="item1"><label for="item1"></label><span>Title of item 1</span>
             <ul>
                 <li>1</li>
             </ul>
         <li><span>An outer item</span></li>
+
+There can be no spaces between elements in start of <li>
 */
 
-ul.tree,
-ul.tree ul {
-    list-style-type: none;
+@import 'reset.css';
+
+/* 
+    Attach markers in front of li.
+    Since there is no parent selector in css, we need to use 
+    ::before on a child in the foldable case.
+    We could require a child for the non-foldable case, but 
+    the following should work, attaching the 
+    display:inline-block makes sizing work.
+*/
+
+li {
+    padding-left: 1rem;
 }
 
 ul.tree input[type='checkbox'] {
     display: none;
-}
-
-ul.tree li.foldable::before {
-    content: '';
-    width: 0em;
-}
-
-ul.tree input[type='checkbox']+label::before,
-ul.tree li::before {
-    content: '\25B7';
-    position: relative;
-    width: 1em;
-    height: 1em;
-}
-
-ul.tree input[type='checkbox']:checked+label::before {
-    content: '\25BD';
 }
 
 ul.tree input[type='checkbox']~ul {
@@ -45,4 +35,27 @@ ul.tree input[type='checkbox']~ul {
 
 ul.tree input[type='checkbox']:checked~ul {
     display: block;
+}
+
+ul.tree li.foldable>input[type='checkbox']+label::before,
+ul.tree li::before {
+    display: inline-block;
+    width: 1rem;
+}
+
+ul.tree li::before {
+    content: '\25A1';
+}
+
+ul.tree li.foldable::before {
+    content: '';
+    width: 0;
+}
+
+ul.tree li.foldable>input[type='checkbox']+label::before {
+    content: '\25B7';
+}
+
+ul.tree li.foldable>input[type='checkbox']:checked+label::before {
+    content: '\25BD';
 }
