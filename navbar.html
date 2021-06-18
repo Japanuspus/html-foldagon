@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Navbar demo</title>
+        <link href="navbar.css" rel="stylesheet">
+    </head>
+    <body><div class="page-wrapper">
+        <header class="page-header">Stuff in iframe</header>
+        <nav class="sidebar">
+            <ul class=tree>
+                <li><a href="./content1.html" target="content-iframe">Content 1</a></li>
+                <li><a href="./content2.html" target="content-iframe">Content 2</a></li>
+                <li>We should expect very long labels</li>
+            </ul>
+        </nav>
+        <div class="main-content">
+            <iframe id="content-iframe" name="content-iframe" allowfullscreen src="./content1.html"></iframe>
+        </div>        
+    </div></body>
+</html>
