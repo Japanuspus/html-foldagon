@@ -28,6 +28,8 @@ nav {
     grid-row: 2;
     border-right: 1px solid aquamarine;
     height: 100%;
+    resize: horizontal;
+    overflow: hidden;
 }
 
 nav iframe {
