@@ -1,0 +1,36 @@
+@import 'reset.css';
+
+.page-wrapper {
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 5rem 1fr;
+    height: 100%;
+    /* min-height: 100vh;*/
+}
+
+header {
+    grid-column: 1 / 3;
+    grid-row: 1;
+    text-align: center;
+    font-size: x-large;
+    background-color: aquamarine;
+}
+
+main {
+    grid-column: 2;
+    grid-row: 2;
+    width: 100%;
+}
+
+nav {
+    grid-column: 1;
+    grid-row: 2;
+    border-right: 1px solid aquamarine;
+    height: 100%;
+}
+
+nav iframe {
+    height: 100%;
+    width: 100%;
+}

@@ -1,0 +1,131 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="foldagon.css">
+        <base target="_parent">
+    </head>
+<body>
+    <ul class=tree>
+        <li><a href="./full_content1_auto.html">Content 1</a></li>
+        <li><a href="./full_content2_auto.html">Content 2</a></li>
+        <li><a href="./short_content2_auto.html">Short Content</a></li>
+        <li class="foldable"><input type="checkbox" id="item2"><label for="item2"></label><a href="./short_content3_auto.html">Content 3 with sublist</a>
+            <ul>
+                <li><a href="./inner_content3.1_auto.html">Inner content 3.1</a></li>
+            </ul>
+        </li>
+        <li>We should expect very long labels</li>
+        <li class="foldable"><input type="checkbox" id="item1"><label for="item1"></label><span>Very long list of subtoppics</span>
+            <ul>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+                <li>We should expect very long labels</li>
+            </ul>
+        </li>
+    </ul>
+    <script>
+        const unfold_above = el0 => {
+            let el = el0;
+            while (el != null) {
+                if (el.tagName=='LI' && el.classList.contains('foldable')) {
+                    el.firstChild.checked=true;
+                }
+                el = el.parentElement;
+            }
+        }
+
+        const loc = window.parent.location;
+        const file_name = loc.pathname.split("/").pop();
+        console.log(`_navbar parent href: ${loc.href}, filename parsed as: ${file_name}`);
+        const tgt_href = './'+file_name;
+        for (const el of document.getElementsByTagName('a')) {
+            if (el.attributes.href.value == tgt_href) {
+                console.log(`Setting focus to corresponding element: ${el.innerText}`);
+                unfold_above(el);
+                el.focus();
+                el.classList.add('current-document')
+            }
+        }
+    </script>
+</body>
+</html>

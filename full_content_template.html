@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>{{title}}</title>
+        <link href="full_content.css" rel="stylesheet">
+    </head>
+    <body><div class="page-wrapper">
+        <header>Stuff in iframe -- {{title}} </header>
+        <main>
+            <h1>{{title}}</h1>
+            This is long and important content with much wow.
+            Please see the <a href="./full_content2.html">other content</a>.
+    
+            {% if title.startswith('short') %}
+            This is some short content!            
+            {% else %}
+            <h2 id="part1">{{title}} - Part 1</h2>
+            Please see <a href="#part2">part 2</a>. 
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lacinia commodo purus, ut eleifend sem dapibus eu. Integer semper massa hendrerit sapien posuere, vel accumsan nisl porttitor. Quisque imperdiet quam sit amet velit feugiat elementum. Ut id neque eros. Nunc vehicula libero quis nisi aliquet sagittis. Vestibulum et lectus lobortis, eleifend massa ultrices, rhoncus libero. Etiam varius turpis sit amet odio cursus mattis. Proin et feugiat felis. Aenean ornare porta arcu, ac ultricies ligula dignissim at. Vivamus feugiat condimentum congue. Morbi iaculis lectus in interdum elementum. Curabitur eleifend semper est vel mollis. Nunc ac gravida nunc, vitae gravida lectus. Fusce mattis quam ut sodales molestie.
+            <p>Phasellus efficitur, urna a auctor malesuada, dolor dui sodales mi, ac gravida sem libero a tortor. Mauris gravida sagittis magna ut congue. Etiam convallis sed ligula auctor eleifend. Sed sollicitudin convallis sollicitudin. Nunc in mi sodales, pretium turpis a, dignissim libero. Nam egestas, sem non pulvinar sodales, ligula ipsum mattis mi, ac feugiat tellus velit lobortis augue. Duis imperdiet laoreet arcu, sit amet suscipit justo volutpat id.
+            <p>Aenean ut vehicula tortor. Maecenas sit amet nisl vitae urna viverra pharetra. Quisque id odio bibendum, placerat nunc at, pretium tellus. Duis gravida, tortor sit amet laoreet pulvinar, enim turpis pretium leo, sed tempor lorem sem eu nulla. Aenean egestas elit eu viverra facilisis. Ut luctus elementum nulla. Curabitur nec velit nisl.
+            <p>Aenean venenatis porta nunc, ac tempus neque tempus sed. Praesent vulputate tellus eu varius pretium. Maecenas vulputate, purus et volutpat rhoncus, sapien diam auctor dolor, vel maximus augue magna ut neque. Nunc semper mauris a augue gravida, posuere mattis turpis laoreet. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse fermentum efficitur auctor. Aliquam in felis at tellus ultrices ornare. Quisque lacus nunc, vulputate id mi sed, rhoncus rhoncus erat.
+            <p>Nunc imperdiet orci enim, vitae molestie ante volutpat quis. Nullam at odio sed sapien rhoncus posuere ut eu ipsum. Integer vel eros in massa pulvinar facilisis in at ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque augue eros, pulvinar a vehicula quis, ullamcorper auctor velit. Etiam mattis nisl sed commodo ornare. Sed efficitur pharetra felis, nec congue purus maximus non. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris at metus cursus, consectetur elit non, imperdiet enim. Sed vel tellus ligula. Mauris egestas vitae diam et ultricies. In non posuere risus. Curabitur elit nulla, sagittis sodales enim nec, faucibus commodo enim. Sed commodo posuere rutrum. Sed pellentesque nec nunc et tincidunt. Cras congue dictum augue, nec fringilla purus pretium vitae. 
+    
+            <img src="rocket.svg" alt="Cartoon rocket drawing">
+    
+            <h2 id="part2">{{title}} - Part 2</h2>
+            Please see <a href="#part1">part 1</a>. 
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lacinia commodo purus, ut eleifend sem dapibus eu. Integer semper massa hendrerit sapien posuere, vel accumsan nisl porttitor. Quisque imperdiet quam sit amet velit feugiat elementum. Ut id neque eros. Nunc vehicula libero quis nisi aliquet sagittis. Vestibulum et lectus lobortis, eleifend massa ultrices, rhoncus libero. Etiam varius turpis sit amet odio cursus mattis. Proin et feugiat felis. Aenean ornare porta arcu, ac ultricies ligula dignissim at. Vivamus feugiat condimentum congue. Morbi iaculis lectus in interdum elementum. Curabitur eleifend semper est vel mollis. Nunc ac gravida nunc, vitae gravida lectus. Fusce mattis quam ut sodales molestie.
+            <p>Phasellus efficitur, urna a auctor malesuada, dolor dui sodales mi, ac gravida sem libero a tortor. Mauris gravida sagittis magna ut congue. Etiam convallis sed ligula auctor eleifend. Sed sollicitudin convallis sollicitudin. Nunc in mi sodales, pretium turpis a, dignissim libero. Nam egestas, sem non pulvinar sodales, ligula ipsum mattis mi, ac feugiat tellus velit lobortis augue. Duis imperdiet laoreet arcu, sit amet suscipit justo volutpat id.
+            <p>Aenean ut vehicula tortor. Maecenas sit amet nisl vitae urna viverra pharetra. Quisque id odio bibendum, placerat nunc at, pretium tellus. Duis gravida, tortor sit amet laoreet pulvinar, enim turpis pretium leo, sed tempor lorem sem eu nulla. Aenean egestas elit eu viverra facilisis. Ut luctus elementum nulla. Curabitur nec velit nisl.
+            <p>Aenean venenatis porta nunc, ac tempus neque tempus sed. Praesent vulputate tellus eu varius pretium. Maecenas vulputate, purus et volutpat rhoncus, sapien diam auctor dolor, vel maximus augue magna ut neque. Nunc semper mauris a augue gravida, posuere mattis turpis laoreet. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse fermentum efficitur auctor. Aliquam in felis at tellus ultrices ornare. Quisque lacus nunc, vulputate id mi sed, rhoncus rhoncus erat.
+            <p>Nunc imperdiet orci enim, vitae molestie ante volutpat quis. Nullam at odio sed sapien rhoncus posuere ut eu ipsum. Integer vel eros in massa pulvinar facilisis in at ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque augue eros, pulvinar a vehicula quis, ullamcorper auctor velit. Etiam mattis nisl sed commodo ornare. Sed efficitur pharetra felis, nec congue purus maximus non. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris at metus cursus, consectetur elit non, imperdiet enim. Sed vel tellus ligula. Mauris egestas vitae diam et ultricies. In non posuere risus. Curabitur elit nulla, sagittis sodales enim nec, faucibus commodo enim. Sed commodo posuere rutrum. Sed pellentesque nec nunc et tincidunt. Cras congue dictum augue, nec fringilla purus pretium vitae. 
+    
+            <img src="rocket.svg" alt="Cartoon rocket drawing">
+            {% endif %}
+        </main>
+        <nav>
+            <iframe id="navbar-iframe" src="./_navbar.html"></iframe>
+        </nav>
+    </div></body>
+</html>

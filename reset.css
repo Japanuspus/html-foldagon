@@ -38,7 +38,11 @@ fieldset,
 legend,
 textarea,
 pre,
-iframe {
+iframe,
+main,
+header,
+nav
+{
     margin: 0;
     padding: 0;
     font-weight: normal;
