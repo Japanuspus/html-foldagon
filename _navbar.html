@@ -119,27 +119,17 @@
                 el = el.parentElement;
             }
         }
-
-        const relative_location = (l1, l0) => {
-            let l0s = l0.pathname.split("/");
-            l0s.pop();
-            let l1s = l1.pathname.split("/");
-            if (l1s.length <= l0s.length) {
-                console.log(`${l1.pathname} not subpath of ${l0.pathname}`);
-                return null;
-            }
-            /* todo: check that skipped parts match */
-            return l1s.slice(l0s.length).join("/");
-        }
-
-        const tgt_href = relative_location(window.parent.location, window.location);
-        console.log(`_navbar parent href: ${window.parent.location.href}, searching for ${tgt_href}`);
-        for (const el of document.getElementsByTagName('a')) {
-            if (el.attributes.href.value == tgt_href) {
-                console.log(`Setting focus to corresponding element: ${el.innerText}`);
-                unfold_above(el);
-                el.focus();
-                el.classList.add('current-document')
+        
+        if (window.location.hash) {
+            const tgt_href = window.location.hash.slice(1);
+            console.log(`Navbar trying to focus ${tgt_href}`);
+            for (const el of document.getElementsByTagName('a')) {
+                if (el.attributes.href.value == tgt_href) {
+                    console.log(`Setting focus to corresponding element: ${el.innerText}`);
+                    unfold_above(el);
+                    el.focus();
+                    el.classList.add('current-document')
+                }
             }
         }
     </script>

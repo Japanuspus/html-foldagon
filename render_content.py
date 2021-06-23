@@ -1,7 +1,8 @@
 from jinja2 import Template
 from html.parser import HTMLParser
 import os
-from pathlib import Path
+import posixpath
+from pathlib import Path, PurePosixPath
 
 
 def get_file_names():
@@ -24,13 +25,15 @@ def get_file_names():
 def main():
     t = Template(Path('full_content_template.html').read_text())
 
-    for href in (Path(f) for f in get_file_names()):
-        href.parent.mkdir(parents=True,exist_ok=True)
-        root_rel = os.path.relpath('.', href.parent)
-        print(f"Writing {href}. Root rel: {root_rel}")
-        href.write_text(t.render(
-            title=href.stem.replace('_', ' '),
+    for file_path in (Path(f) for f in get_file_names()):
+        file_path.parent.mkdir(parents=True,exist_ok=True)
+        posix_path = PurePosixPath(file_path)
+        root_rel = posixpath.relpath('.', posix_path.parent)
+        print(f"Writing {file_path}. Root rel: {root_rel}")
+        file_path.write_text(t.render(
+            title=file_path.stem.replace('_', ' '),
             root_rel=root_rel,
+            page_href=posix_path,
         ))
 
 
