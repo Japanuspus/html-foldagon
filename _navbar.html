@@ -1,16 +1,22 @@
 <html>
     <head>
         <link rel="stylesheet" href="foldagon.css">
+        <style>
+            .current-document {
+                font-weight: bold;
+            }
+        </style>
         <base target="_parent">
     </head>
 <body>
     <ul class=tree>
-        <li><a href="./full_content1_auto.html">Content 1</a></li>
-        <li><a href="./full_content2_auto.html">Content 2</a></li>
-        <li><a href="./short_content2_auto.html">Short Content</a></li>
-        <li class="foldable"><input type="checkbox" id="item2"><label for="item2"></label><a href="./short_content3_auto.html">Content 3 with sublist</a>
+        <li><a href="full_content1_auto.html">Content 1</a></li>
+        <li><a href="full_content2_auto.html">Content 2</a></li>
+        <li><a href="short_content2_auto.html">Short Content</a></li>
+        <li class="foldable"><input type="checkbox" id="item2"><label for="item2"></label><a href="short_content3_auto.html">Content 3 with sublist</a>
             <ul>
-                <li><a href="./inner_content3.1_auto.html">Inner content 3.1</a></li>
+                <li><a href="inner_content3.1_auto.html">Inner content 3.1</a></li>
+                <li><a href="subfolder/full_content4_auto.html">Content 4 subfolder</a></li>
             </ul>
         </li>
         <li>We should expect very long labels</li>
@@ -114,10 +120,20 @@
             }
         }
 
-        const loc = window.parent.location;
-        const file_name = loc.pathname.split("/").pop();
-        console.log(`_navbar parent href: ${loc.href}, filename parsed as: ${file_name}`);
-        const tgt_href = './'+file_name;
+        const relative_location = (l1, l0) => {
+            let l0s = l0.pathname.split("/");
+            l0s.pop();
+            let l1s = l1.pathname.split("/");
+            if (l1s.length <= l0s.length) {
+                console.log(`${l1.pathname} not subpath of ${l0.pathname}`);
+                return null;
+            }
+            /* todo: check that skipped parts match */
+            return l1s.slice(l0s.length).join("/");
+        }
+
+        const tgt_href = relative_location(window.parent.location, window.location);
+        console.log(`_navbar parent href: ${window.parent.location.href}, searching for ${tgt_href}`);
         for (const el of document.getElementsByTagName('a')) {
             if (el.attributes.href.value == tgt_href) {
                 console.log(`Setting focus to corresponding element: ${el.innerText}`);
